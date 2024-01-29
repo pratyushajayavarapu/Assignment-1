@@ -24,14 +24,13 @@ namespace PetStimulator
             Console.WriteLine("3. Rabbit");
             Console.WriteLine("4. Bird");
             Console.Write("Enter the number of your choice: ");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            int choice = Convert.ToInt32(Console.Read());
+            string petType = Console.ReadLine();
 
-            string[] petTypes = { "Cat", "Dog", "Rabbit", "Bird" };
-
-            Console.Write("Enter the name for your pet: ");
+           Console.Write("Enter the name for your pet: ");
             string petName = Console.ReadLine();
 
-            Console.WriteLine($"Welcome, {petName} the {petTypes[choice - 1]}!");
+            Console.WriteLine($"Welcome, {petName} the {petType}!");
 
         }
     }
