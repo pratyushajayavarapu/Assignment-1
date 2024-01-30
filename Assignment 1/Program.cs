@@ -1,16 +1,9 @@
-﻿using System;
-using System.Buffers.Text;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Metrics;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+
 // pet stimulator
 // step1 here pet type is created and pet name will be given
-
+using System;
 namespace PetStimulator
 {
     class Program
@@ -30,204 +23,229 @@ namespace PetStimulator
             Console.Write("Enter the name for your pet: ");
             string petName = Console.ReadLine();
 
+            Pet pet = new Pet(petName);
+
             Console.WriteLine($"Welcome, {petName} lets play!");
 
 
             // pet care actions
+            // main loop
+           
 
-            static void Main(string[] args)
+           
+            while (true)
             {
+                Console.WriteLine("\nWhat would you like to do?");
+                Console.WriteLine("1. Feed");
+                Console.WriteLine("2. Play");
+                Console.WriteLine("3. Rest");
+                Console.WriteLine("4. Check status");
+                Console.WriteLine("5. Exit");
+                Console.Write("Enter your option: ");
+                string option = Console.ReadLine();
 
-                Console.WriteLine("Please choose your action:");
-                Console.WriteLine("1. play");
-                Console.WriteLine("2. feed");
-                Console.WriteLine("3. rest");
-                Console.WriteLine("4. check status");
-                Console.WriteLine("5.exit");
-                Console.Write("Enter the number of your action: ");
-                int action = Convert.ToInt32(Console.Read());
-                string petType = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        pet.Feed();
+                        break;
+                    case "2":
+                        pet.Play();
+                        break;
+                    case "3":
+                        pet.Rest();
+                        break;
+                    case "4":
+                        pet.CheckStatus();
+                        break;
+                    case "5":
+                        Console.WriteLine("Thank you for playing!");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
+                        break;
+                }
+
+                // Simulate time passage
+                pet.PassTime();
             }
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
