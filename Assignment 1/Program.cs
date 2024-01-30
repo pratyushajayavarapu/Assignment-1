@@ -27,14 +27,208 @@ namespace PetStimulator
             int choice = Convert.ToInt32(Console.Read());
             string petType = Console.ReadLine();
 
-           Console.Write("Enter the name for your pet: ");
+            Console.Write("Enter the name for your pet: ");
             string petName = Console.ReadLine();
 
             Console.WriteLine($"Welcome, {petName} lets play!");
 
+
+            // pet care actions
+
+            static void Main(string[] args)
+            {
+
+                Console.WriteLine("Please choose your action:");
+                Console.WriteLine("1. play");
+                Console.WriteLine("2. feed");
+                Console.WriteLine("3. rest");
+                Console.WriteLine("4. check status");
+                Console.WriteLine("5.exit");
+                Console.Write("Enter the number of your action: ");
+                int action = Convert.ToInt32(Console.Read());
+                string petType = Console.ReadLine();
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
 
 
 
