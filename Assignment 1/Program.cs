@@ -18,7 +18,7 @@ namespace PetStimulator
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the PetStimulator Program!");
-            Console.WriteLine("Please choose your pet type:");
+            Console.WriteLine("Please choose your petType:");
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
             Console.WriteLine("3. Rabbit");
@@ -30,7 +30,7 @@ namespace PetStimulator
            Console.Write("Enter the name for your pet: ");
             string petName = Console.ReadLine();
 
-            Console.WriteLine($"Welcome, {petName} the {petType}!");
+            Console.WriteLine($"Welcome, {petName} lets play!");
 
         }
     }
