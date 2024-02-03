@@ -4,10 +4,14 @@
 // pet stimulator
 // step1 here pet type is created and pet name will be given
 using System;
+using System.Xml.Linq;
 namespace PetStimulator
 {
     class Program
     {
+        public int Hunger { get; private set; } = 5;
+        public int Happiness { get; private set; } = 5;
+        public int Health { get; private set; } = 5;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the PetStimulator Program!");
@@ -47,16 +51,16 @@ namespace PetStimulator
                 switch (option)
                 {
                     case "1":
-                        pet.Feed();
+                        petName.Feed();
                         break;
                     case "2":
-                        pet.Play();
+                        petName.Play();
                         break;
                     case "3":
-                        pet.Rest();
+                        petName.Rest();
                         break;
                     case "4":
-                        pet.CheckStatus();
+                        petName.CheckStatus();
                         break;
                     case "5":
                         Console.WriteLine("Thank you for playing!");
@@ -67,15 +71,26 @@ namespace PetStimulator
                 }
 
                 // Simulate time passage
-                pet.PassTime();
+                pet.PassTime(); 
             }
         }
     }
 
 
+    public void Feed()
+    {
+        Console.WriteLine($"{Name} is being fed.");
+        Hunger = Math.Max(Hunger - 2, 0);
+        Health = Math.Min(Health + 1, 10);
+    }
 
 }
-    
+// defining the class pet
+
+
+
+
+
 
 
 
