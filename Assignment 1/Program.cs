@@ -1,6 +1,4 @@
-﻿
-
-
+﻿// 8973016-Pratyusha Jayavarapu- Assignment 1
 // pet stimulator
 // step1 here pet type is created and pet name will be given
 using System;
