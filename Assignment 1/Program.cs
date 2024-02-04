@@ -9,34 +9,31 @@ namespace PetStimulator
 {
     class Program
     {
-        public int Hunger { get; private set; } = 5;
-        public int Happiness { get; private set; } = 5;
-        public int Health { get; private set; } = 5;
-        static void Main(string[] args)
+       
+        static void Main()
         {
             Console.WriteLine("Welcome to the PetStimulator Program!");
             Console.WriteLine("Please choose your petType:");
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
             Console.WriteLine("3. Rabbit");
-            Console.WriteLine("4. Bird");
+            
             Console.Write("Enter the number of your choice: ");
-            int choice = Convert.ToInt32(Console.Read());
-            string petType = Console.ReadLine();
-
-            Console.Write("Enter the name for your pet: ");
+            int petType = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Enter your pet's name:");
             string petName = Console.ReadLine();
-
-            Pet pet = new Pet(petName);
+             
+            Pet pet = new Pet(petType, petName);
 
             Console.WriteLine($"Welcome, {petName} lets play!");
 
 
             // pet care actions
             // main loop
-           
 
-           
+
+
             while (true)
             {
                 Console.WriteLine("\nWhat would you like to do?");
@@ -51,41 +48,35 @@ namespace PetStimulator
                 switch (option)
                 {
                     case "1":
-                        petName.Feed();
+                        pet.Feed();
                         break;
                     case "2":
-                        petName.Play();
+                        pet.Play();
                         break;
                     case "3":
-                        petName.Rest();
+                        pet.Rest();
                         break;
                     case "4":
-                        petName.CheckStatus();
+                        pet.CheckStatus();
                         break;
                     case "5":
                         Console.WriteLine("Thank you for playing!");
-                        return;
+                        return; 
                     default:
                         Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
                         break;
                 }
 
                 // Simulate time passage
-                pet.PassTime(); 
+                pet.UpdateStats();
             }
         }
     }
 
-
-    public void Feed()
-    {
-        Console.WriteLine($"{Name} is being fed.");
-        Hunger = Math.Max(Hunger - 2, 0);
-        Health = Math.Min(Health + 1, 10);
-    }
-
-}
 // defining the class pet
+
+
+
 
 
 
