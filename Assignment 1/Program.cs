@@ -3,14 +3,16 @@
 // step1 here pet type is created and pet name will be given
 using System;
 using System.Xml.Linq;
+// name space declaration
 namespace PetStimulator
 {
+    // main class declaration
     class Program
     {
-
+        // main method start of the program
         static void Main(string[] args)
         {
-
+            // welcome message
             Console.WriteLine("Welcome to the PetStimulator Program!");
             Console.WriteLine("Please choose your petType:");
             Console.WriteLine("1. Cat");
@@ -22,16 +24,16 @@ namespace PetStimulator
 
             Console.WriteLine("Enter your pet's name:");
             string petName = Console.ReadLine();
-
+            // Creating a new Pet object based on user choice
             Pet pet = new Pet(petType, petName);
 
 
 
-            Console.WriteLine($"Welcome, {petName} lets play!");
+          Console.WriteLine($"Welcome, {petName} lets play!");
 
 
             // pet care actions
-            // main loop
+            // // Main loop for interacting with the pet
 
 
 
@@ -83,6 +85,7 @@ namespace PetStimulator
     // defining the class pet
     class Pet
         {
+            /// Private fields to store pet attributes
             private int type;
             private string name;
             private int hunger;
@@ -91,33 +94,35 @@ namespace PetStimulator
 
             public Pet(int type, string name)
             {
+                // Constructor to initialize pet attributes
                 this.type = type;
                 this.name = name;
                 this.hunger = 5;
                 this.happiness = 5;
                 this.health = 5;
             }
-
+            // Method to feed the pet
             public void Feed()
             {
                 hunger--;
                 health++;
                 Console.WriteLine($"{name} has been fed. Hunger decreased, health increased.");
             }
-
+            // // Method to play with pet
             public void Play()
             {
                 happiness++;
                 hunger++;
                 Console.WriteLine($"{name} has played. Happiness increased, hunger increased.");
             }
-
+            // Method to give rest to the pet
             public void Rest()
             {
                 health++;
                 happiness--;
                 Console.WriteLine($"{name} has rested. Health increased, happiness decreased.");
             }
+            //Method to handle health deterioration based on hunger and happiness levels
             public void healthDeterioration()
             {
                 if (hunger > 7 || happiness < 3)
@@ -128,13 +133,14 @@ namespace PetStimulator
                 else if (hunger < 3 && happiness > 7)
                 {
                     health++;
-                    Console.WriteLine($"{name}'s health has improved due to good hunger and happiness.");
+                    Console.WriteLine($"{name}'s health has improved as pet is happy and not hungry ");
                 }
                 else
                 {
                     Console.WriteLine($"{name}'s health is stable.");
                 }
             }
+            // Method to display the pet's status
             public void checkStatus()
             {
                 Console.WriteLine($"--- {name}'s Status ---");
